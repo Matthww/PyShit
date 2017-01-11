@@ -28,7 +28,7 @@ while Player == false
         else:
             print("You win!", player, "cut", computer)
     else:
-        print("Rock, Paper, Scissors")
+        print("Rock, Paper or Scissors")
 
     player = False
     computer = t[randint(0, 2)]
