@@ -8,36 +8,39 @@ import os
 t = datetime.now()
 random = random.random()
 
-for x in range(100):
-    print("[%s] loading...\n" % x, end="")
-    time.sleep(0.03)
-    if x == 99:
-        print("[100] loaded succesfully ")
+def load_interface():
+    for x in range(100):
+        print("[%s] loading...\n" % x, end="")
+        time.sleep(0.03)
+        if x == 99:
+            print("[100] loaded succesfully ")
+def psw_interface():
+    test = input("Enter password: ")
+    while test != "Hello":
+        print("Invalid Password!")
+        sys.exit("Access denied")
+    print(" - Access granted - ")
 
-test = input("Enter password: ")
-while test != "Hello":
-    print("Invalid Password!")
-    sys.exit("Access denied")
+def time_interface():
+    t = datetime.now()
+    print('Year = %s' % t.year)
+    print('Month = %s' % t.month)
+    print('Day = %s' % t.day)
+    print('Hour = %s' % t.hour)
+    print('Minutes = %s' % t.minute)
+    print('Microsecond = %s' % t.microsecond)
 
-print(" - Access granted - ")
-t = datetime.now()
+    print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
+    print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
 
-print('Year = %s' % t.year)
-print('Month = %s' % t.month)
-print('Day = %s' % t.day)
-print('Hour = %s' % t.hour)
-print('Minutes = %s' % t.minute)
-print('Microsecond = %s' % t.microsecond)
-
-print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
-print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
-
-commands = input(">>>: ")
-while commands != "clr" + "test" + "calc":
+def command_interface():
     commands = input(">>>: ")
-    if commands == "clr":
-        print("\n" * 100)
-    elif commands == "help":
+    while commands != "clr" + "test" + "calc":
+        commands = input(">>>: ")
+        if commands == "clr":
+            print("\n" * 100)
+def help_command_interface():
+    if commands == "help":
         print("Commands:\n\n\nRPS {Rock Paper Scissors game}")
         print("test {performs a test}")
         print("calc {A calculator}")
