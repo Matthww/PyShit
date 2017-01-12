@@ -1,7 +1,7 @@
 from tkinter import Frame, Label, Tk
 
 
-class startWindow(Frame):
+class openWindow(Frame):
     def __init__(self, parent=None):
         Frame.__init__(self, parent)
         Frame.pack(self)
@@ -12,5 +12,5 @@ if __name__ == '__main__':
     root = Tk()
     root.title("Test title")
     root.geometry("1920x1080")
-    app = startWindow(root)
+    app = openWindow(root)
     root.mainloop()

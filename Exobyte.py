@@ -3,6 +3,7 @@ import sys
 import time
 from datetime import datetime
 from random import randint
+from tkinter import Frame, Label, Tk
 
 t = datetime.now()
 random = random.random()
@@ -44,6 +45,7 @@ def help_command_interface():
         print("calc {A calculator}")
         print("clr {clears console}")
         print("RPS {Rock Paper Scissors game}")
+        print("screen {opens a window")
         print("- More commands soon -")
 
 
@@ -109,6 +111,21 @@ def rps_command_interface():
             computer = actions[randint(0, 2)]
 
 
+def screen_command_interface():
+    class openWindow(Frame):
+        def __init__(self, parent=None):
+            Frame.__init__(self, parent)
+            Frame.pack(self)
+            Label(self, text='Test', width=72).pack()
+
+    if __name__ == '__main__':
+        root = Tk()
+        root.title("Test title")
+        root.geometry("1920x1080")
+        app = openWindow(root)
+        root.mainloop()
+
+
 load_interface()
 psw_interface()
 time_interface()
@@ -123,3 +140,5 @@ while commands != "clr" + "test" + "calc":
         calc_command_interface()
     elif commands == "clr":
         print("\n" * 100)
+    elif commands == "screen":
+        screen_command_interface()
