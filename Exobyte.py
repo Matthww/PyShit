@@ -4,6 +4,7 @@ import time
 from datetime import datetime
 from random import randint
 from tkinter import Frame, Label, Tk
+from PIL import Image
 
 t = datetime.now()
 random = random.random()
@@ -111,7 +112,7 @@ def rps_command_interface():
             computer = actions[randint(0, 2)]
 
 
-def screen_command_interface(): #strNophix made it :P
+def screen_command_interface():  # strNophix made it :P
     class openWindow(Frame):
         def __init__(self, parent=None):
             Frame.__init__(self, parent)
@@ -124,6 +125,11 @@ def screen_command_interface(): #strNophix made it :P
         root.geometry("1920x1080")
         app = openWindow(root)
         root.mainloop()
+
+
+def cat_command_interface():
+    image = Image.open('images/cat.jpg')
+    image.show()
 
 
 load_interface()
@@ -144,3 +150,5 @@ while commands != "clr" + "test" + "calc":
         screen_command_interface()
     elif commands == "help":
         help_command_interface()
+    elif commands == "cat":
+        cat_command_interface()
