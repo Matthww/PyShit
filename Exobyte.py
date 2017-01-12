@@ -9,7 +9,6 @@ from PIL import Image
 t = datetime.now()
 random = random.random()
 
-
 def load_interface():
     for x in range(100):
         print("[%s] loading...\n" % x, end="")
@@ -47,6 +46,7 @@ def help_command_interface():
         print("clr {clears console}")
         print("RPS {Rock Paper Scissors game}")
         print("screen {opens a window")
+        print("pwd {Generate random numbers")
         print("- More commands soon -")
 
 
@@ -132,12 +132,16 @@ def cat_command_interface():
     image.show()
 
 
+def pwdgen_command_interface():
+    print("Generated password: ")
+    print(randint(100000, 1000000) + 123)
+
+
 load_interface()
 psw_interface()
 time_interface()
 commands = input(">>>: ")
 while commands != "clr" + "test" + "calc":
-    commands = input(">>>: ")
     if commands == "test":
         test_command_interface()
     elif commands == "RPS":
@@ -152,3 +156,6 @@ while commands != "clr" + "test" + "calc":
         help_command_interface()
     elif commands == "cat":
         cat_command_interface()
+    elif commands == "pwd":
+        pwdgen_command_interface()
+    commands = input(">>>: ")
