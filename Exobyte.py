@@ -11,12 +11,11 @@ for x in range(100):
     print("[%s] loading...\n" % x, end="")
     time.sleep(0.03)
     if x == 99:
-        print("[100] loaded succesfully ")
+        print("[100%] loaded succesfully ")
 
 test = input("Enter password: ")
 while test != "Hello":
     print("Invalid Password!")
-    sys.exit("Acces denied")
 
 print(" - Access granted - ")
 time = datetime.now()
