@@ -38,10 +38,12 @@ while commands != "clr" + "test" + "calc":
     if commands == "clr":
         print("\n" * 100)
     elif commands == "help":
-        print("Commands:\n\n\nRPS {Rock Paper Scissors game}")
+        print("Commands: ")
         print("test {performs a test}")
         print("calc {A calculator}")
         print("clr {clears console}")
+        print("RPS {Rock Paper Scissors game}")
+        print("screen {opens a test window")
         print("- More commands soon -")
     elif commands == "test":
         print("Hello this is a test.")
@@ -60,8 +62,8 @@ while commands != "clr" + "test" + "calc":
     elif commands == "RPS":
         actions = ["Rock", "Paper", "Scissors"]
         computer = actions[randint(0, 2)]
-        player = False
-        while not player:
+        player = True
+        while player:
             time.sleep(2.5)
             print("\n" * 40)
             print("Loading.")
@@ -73,7 +75,7 @@ while commands != "clr" + "test" + "calc":
             print("Loading...")
             time.sleep(0.5)
             print("\n" * 40)
-            player = input("Rock, Paper, Scissor\nChoice: ")
+            player = input("Rock, Paper, Scissor or EXIT\nChoice: ")
             if player == computer:
                 print("Draw!")
             elif player == "Rock":
@@ -91,8 +93,24 @@ while commands != "clr" + "test" + "calc":
                     print("You lose!", computer, "smashes", player)
                 else:
                     print("You win!", player, "cut", computer)
+            elif player == "EXIT":
+                player = False
             else:
-                print("Rock, Paper or Scissors")
+                print("Rock, Paper, Scissor or EXIT")
 
             player = False
             computer = actions[randint(0, 2)]
+    elif commands == "screen":
+        class startWindow(Frame):
+            def __init__(self, parent=None):
+                Frame.__init__(self, parent)
+                Frame.pack(self)
+                Label(self, text='Test', width=72).pack()
+
+
+        if __name__ == '__main__':
+            root = Tk()
+            root.title("Test title")
+            root.geometry("1920x1080")
+            app = startWindow(root)
+            root.mainloop()
