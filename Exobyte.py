@@ -142,3 +142,5 @@ while commands != "clr" + "test" + "calc":
         print("\n" * 100)
     elif commands == "screen":
         screen_command_interface()
+    elif commands == "help":
+        help_command_interface()
