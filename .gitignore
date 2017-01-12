@@ -95,7 +95,6 @@ ENV/
 **/.idea/workspace.xml
 **/.idea/tasks.xml
 nbproject/*
-RockPaperScissors/.idea/*
 
 # Windows image file caches
 Thumbs.db
@@ -106,3 +105,7 @@ Desktop.ini
 # Mac crap lol
 .DS_Store
 /nbproject/private/
+
+# Sphinx-doc
+/docs/build/
+!/docs/requirements.txt
