@@ -1,19 +1,20 @@
-from datetime import datetime
-from random import randint
 import random
 import sys
 import time
-import os
+from datetime import datetime
+from random import randint
 
 t = datetime.now()
 random = random.random()
+
 
 def load_interface():
     for x in range(100):
         print("[%s] loading...\n" % x, end="")
         time.sleep(0.03)
         if x == 99:
-            print("[100] loaded succesfully ")
+            print("[100] loaded successfully ")
+
 
 def psw_interface():
     test = input("Enter password: ")
@@ -21,6 +22,7 @@ def psw_interface():
         print("Invalid Password!")
         sys.exit("Access denied")
     print(" - Access granted - ")
+
 
 def time_interface():
     t = datetime.now()
@@ -34,6 +36,7 @@ def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
 
+
 def help_command_interface():
     if commands == "help":
         print("Commands: ")
@@ -43,9 +46,11 @@ def help_command_interface():
         print("RPS {Rock Paper Scissors game}")
         print("- More commands soon -")
 
+
 def test_command_interface():
     if commands == "test":
         print("Hello this is a test.")
+
 
 def calc_command_interface():
     if commands == "calc":
@@ -60,6 +65,7 @@ def calc_command_interface():
             print(num1 * num2)
         if oper == "%":
             print(num1 % num2)
+
 
 def rps_command_interface():
     if commands == "RPS":
@@ -101,6 +107,7 @@ def rps_command_interface():
 
             player = False
             computer = actions[randint(0, 2)]
+
 
 load_interface()
 psw_interface()
