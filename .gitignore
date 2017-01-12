@@ -92,6 +92,8 @@ ENV/
 
 # Common IDEs
 .idea/
+**/.idea/workspace.xml
+**/.idea/tasks.xml
 nbproject/*
 
 # Windows image file caches
@@ -107,7 +109,5 @@ Desktop.ini
 # Sphinx-doc
 /docs/build/
 !/docs/requirements.txt
-RockPaperScissors/.idea/workspace.xml
-*.xml
 RockPaperScissors/.idea/workspace.xml
 *.xml
