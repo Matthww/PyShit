@@ -15,7 +15,8 @@ for x in range(100):
 
 test = input("Enter password: ")
 while test != "Hello":
-    test = input("Enter password: ")
+    print("Invalid Password!")
+    sys.exit("Acces denied")
 
 print(" - Access granted - ")
 time = datetime.now()
