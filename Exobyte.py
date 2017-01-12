@@ -47,6 +47,7 @@ def help_command_interface():
         print("clr {clears console}")
         print("RPS {Rock Paper Scissors game}")
         print("screen {opens a window")
+        print("cat {opens a pic of the cutes kittycat you'll ever see}")
         print("- More commands soon -")
 
 
