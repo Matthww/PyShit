@@ -1,4 +1,5 @@
 from datetime import datetime
+from random import randint
 import random
 import sys
 import time
@@ -19,17 +20,17 @@ while test != "Hello":
     sys.exit("Access denied")
 
 print(" - Access granted - ")
-time = datetime.now()
+t = datetime.now()
 
-print('Year = %s' % time.year)
-print('Month = %s' % time.month)
-print('Day = %s' % time.day)
-print('Hour = %s' % time.hour)
-print('Minutes = %s' % time.minute)
-print('Microsecond = %s' % time.microsecond)
+print('Year = %s' % t.year)
+print('Month = %s' % t.month)
+print('Day = %s' % t.day)
+print('Hour = %s' % t.hour)
+print('Minutes = %s' % t.minute)
+print('Microsecond = %s' % t.microsecond)
 
-print("Time = %s:%s:%s" % (time.hour, time.minute, time.second))
-print("Date =  %s/%s/%s" % (time.day, time.month, time.year))
+print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
+print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
 
 commands = input(">>>: ")
 while commands != "clr" + "test" + "calc":
@@ -37,7 +38,10 @@ while commands != "clr" + "test" + "calc":
     if commands == "clr":
         print("\n" * 100)
     elif commands == "help":
-        print("Commands:\ntest {performs a test}\ncalc {A calculator}\nclr {clears console}\nRPS {Rock Paper Scissors game}")
+        print("Commands:\n\n\nRPS {Rock Paper Scissors game}")
+        print("test {performs a test}")
+        print("calc {A calculator}")
+        print("clr {clears console}")
         print("- More commands soon -")
     elif commands == "test":
         print("Hello this is a test.")
