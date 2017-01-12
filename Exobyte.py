@@ -14,6 +14,7 @@ def load_interface():
         time.sleep(0.03)
         if x == 99:
             print("[100] loaded succesfully ")
+
 def psw_interface():
     test = input("Enter password: ")
     while test != "Hello":
@@ -33,12 +34,6 @@ def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
 
-def command_interface():
-    commands = input(">>>: ")
-    while commands != "clr" + "test" + "calc":
-        commands = input(">>>: ")
-        if commands == "clr":
-            print("\n" * 100)
 def help_command_interface():
     if commands == "help":
         print("Commands:\n\n\nRPS {Rock Paper Scissors game}")
@@ -46,9 +41,13 @@ def help_command_interface():
         print("calc {A calculator}")
         print("clr {clears console}")
         print("- More commands soon -")
-    elif commands == "test":
+
+def test_command_interface():
+    if commands == "test":
         print("Hello this is a test.")
-    elif commands == "calc":
+
+def calc_command_interface():
+    if commands == "calc":
         num1 = int(input(">>>: Number 1: "))
         num2 = int(input(">>>: Number 2: "))
         oper = input("Choose your operator: % + - * - ")
@@ -60,7 +59,9 @@ def help_command_interface():
             print(num1 * num2)
         if oper == "%":
             print(num1 % num2)
-    elif commands == "RPS":
+
+def rps_command_interface():
+    if commands == "RPS":
         actions = ["Rock", "Paper", "Scissors"]
         computer = actions[randint(0, 2)]
         player = False
@@ -99,3 +100,18 @@ def help_command_interface():
 
             player = False
             computer = actions[randint(0, 2)]
+
+load_interface()
+psw_interface()
+time_interface()
+commands = input(">>>: ")
+while commands != "clr" + "test" + "calc":
+    commands = input(">>>: ")
+    if commands == "test":
+        test_command_interface()
+    elif commands == "RPS":
+        rps_command_interface()
+    elif commands == "calc":
+        calc_command_interface()
+    elif commands == "clr":
+        print("\n" * 100)
