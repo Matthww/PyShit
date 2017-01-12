@@ -106,9 +106,3 @@ Desktop.ini
 # Mac crap lol
 .DS_Store
 /nbproject/private/
-
-# Sphinx-doc
-/docs/build/
-!/docs/requirements.txt
-RockPaperScissors/.idea/workspace.xml
-*.xml
