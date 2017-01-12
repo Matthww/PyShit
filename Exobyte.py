@@ -36,10 +36,11 @@ def time_interface():
 
 def help_command_interface():
     if commands == "help":
-        print("Commands:\n\n\nRPS {Rock Paper Scissors game}")
+        print("Commands: ")
         print("test {performs a test}")
         print("calc {A calculator}")
         print("clr {clears console}")
+        print("RPS {Rock Paper Scissors game}")
         print("- More commands soon -")
 
 def test_command_interface():
@@ -64,8 +65,8 @@ def rps_command_interface():
     if commands == "RPS":
         actions = ["Rock", "Paper", "Scissors"]
         computer = actions[randint(0, 2)]
-        player = False
-        while not player:
+        player = True
+        while player:
             time.sleep(2.5)
             print("\n" * 40)
             print("Loading.")
