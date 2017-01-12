@@ -111,7 +111,7 @@ def rps_command_interface():
             computer = actions[randint(0, 2)]
 
 
-def screen_command_interface():
+def screen_command_interface(): #strNophix made it :P
     class openWindow(Frame):
         def __init__(self, parent=None):
             Frame.__init__(self, parent)
