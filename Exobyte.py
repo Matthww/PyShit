@@ -39,7 +39,7 @@ def psw_interface():
 
 def psw_interface():
     password = str(input("Please enter password to continue: "))
-    if password == "Hello":
+    if password == "Hello" or password == "1337" or password == "leet":
         print(" - Access granted - ")
     else:
         print("Invalid Password!")
