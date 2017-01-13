@@ -15,6 +15,11 @@ random = random.random()
 
 
 def load_interface():
+#    for x in range(100):
+#        print("[%s] loading...\n" % x, end="")
+#        time.sleep(0.03)
+#        if x == 99:
+#            print("[100] loaded successfully ")
     print('\n' * 100)
     print("Loading Exobyte")
     for i in range(101):
