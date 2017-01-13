@@ -1,15 +1,7 @@
-import os
 import random
 
+
 def guess_command_interface():
-
-    if os.path.isfile('../media/insults.txt'):
-        insults = 'yes'
-        file = open('../media/insults.txt', 'r')
-        list = file.readlines()
-    else:
-        insults = "no"
-
     print("Welcome to guess the number")
     print("===========================")
     print(" ")
@@ -23,17 +15,11 @@ def guess_command_interface():
     while guess != num:
         guess = int(input("Take a guess: "))
         if guess < num:
-            if insults == "yes":
-                print(random.choice(list))
             print("Guess higher next time :)\n")
         elif guess > num:
-            if insults == "yes":
-                print(random.choice(list))
             print("Guess lower next time :P\n")
     print("CONGRATULATIONS!")
     input()
-    if insults == "yes":
-        file.close()
 
 
 commands = input(">>>: ")
