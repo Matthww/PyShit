@@ -63,6 +63,8 @@ def help_command_interface():
         print("cat {opens a pic of the cutes kittycat you'll ever see}")
         print("numbergen {Generates random numbers")
         print("pwdgen {Generates random password")
+        print("snow {Shitty falling snow}")
+        print("datingsim {A dating simulator}")
         print("- More commands soon -")
 
 
@@ -236,4 +238,6 @@ while commands != "clr" + "test" + "calc":
         snow_command_interface()
     elif commands == "DatingSim" or commands == "datingsim":
         datingsim_command_interface()
+    else:
+        print("Unknown command type <help> for the available commands")
     commands = input(">>>: ")
