@@ -69,12 +69,10 @@ def help_command_interface():
 
 
 def test_command_interface():
-    if commands == "test":
         print("Hello this is a test.")
 
 
 def calc_command_interface():
-    if commands == "calc":
         num1 = int(input(">>>: Number 1: "))
         num2 = int(input(">>>: Number 2: "))
         oper = input("Choose your operator: % + - * - ")
@@ -128,7 +126,7 @@ def screen_command_interface():  # strNophix made it :P
 
 
 def cat_command_interface():
-    image = Image.open('images/cat.jpg')
+    image = Image.open('media/cat.jpg')
     image.show()
 
 
@@ -148,7 +146,6 @@ def pwdgen_command_interface():
 
 
 def snow_command_interface():
-    if commands == "snow":
             actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
             computer = actions[randint(0, 19)]
             print(computer, end="")
@@ -161,8 +158,8 @@ def snow_command_interface():
             computer = actions[randint(0, 19)]
             print(computer, end="")
             print(" ")
-    for i in range(999999):
-        time.sleep(0.4)
+        for i in range(999999):
+            time.sleep(0.4)
 
 
 def datingsim_command_interface():
