@@ -95,6 +95,8 @@ def help_command_interface():
         print(cmd_numgen + " {Generates random numbers")
         cmd_passgen = colored('passgen', attrs=['underline'])
         print(cmd_passgen + " {Generates random password")
+        cmd_chpass = colored('chpass', attrs=['underline'])
+        print(cmd_chpass + " {Change your login password}")
         cmd_snow = colored('snow', attrs=['underline'])
         print(cmd_snow + " {Shitty falling snow}")
         cmd_datingsim = colored('datingsim', attrs=['underline'])
