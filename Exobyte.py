@@ -1,4 +1,5 @@
 import random
+import random as passgen
 import sys
 import time
 import string
@@ -33,14 +34,6 @@ def psw_interface():
 
 
 def time_interface():
-    t = datetime.now()
-    #print('Year = %s' % t.year)
-    #print('Month = %s' % t.month)
-    #print('Day = %s' % t.day)
-    #print('Hour = %s' % t.hour)
-    #print('Minutes = %s' % t.minute)
-    #print('Microsecond = %s' % t.microsecond)
-
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
     print("\n")
@@ -113,17 +106,11 @@ def rps_command_interface():
 
 
 def screen_command_interface():  # strNophix made it :P
-    class openWindow(Frame):
-        def __init__(self, parent=None):
-            Frame.__init__(self, parent)
-            Frame.pack(self)
-            Label(self, text='Test', width=72).pack()
 
     if __name__ == '__main__':
         root = Tk()
         root.title("Test title")
         root.geometry("1920x1080")
-        app = openWindow(root)
         root.mainloop()
 
 
@@ -141,8 +128,9 @@ def pwdgen_command_interface():
     def pswgen():
         chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
         size = 16
-        return ''.join(randoms.choice(chars) for x in range(size, 24))
+        return ''.join(passgen.choice(chars) for x in range(size, 24))
 
+    print("Generated password: ")
     print(pswgen())
 
 
