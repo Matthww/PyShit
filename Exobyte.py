@@ -235,5 +235,6 @@ while commands != "clr" + "test" + "calc":
     elif commands == "DatingSim" or commands == "datingsim":
         datingsim_command_interface()
     else:
-        print("Unknown command type <help> for the available commands")
+        print("Unknown command!")
+        print("type <help> for the available commands")
     commands = input(">>>: ")
