@@ -14,17 +14,18 @@ import password
 t = datetime.now()
 random = random.random()
 
-
+""" Old Loading stuff from @strNophix
+    for x in range(100):
+        print("[%s] loading...\n" % x, end="")
+        time.sleep(0.03)
+        if x == 99:
+            print("[100] loaded successfully ")
+"""
 def load_interface():
-#    for x in range(100):
-#        print("[%s] loading...\n" % x, end="")
-#        time.sleep(0.03)
-#        if x == 99:
-#            print("[100] loaded successfully ")
     print('\n' * 100)
     print("Loading Exobyte")
     for i in range(101):
-            time.sleep(0.1)
+            time.sleep(0.09)
             sys.stdout.write("\r%d%%" % i)
             sys.stdout.flush()
 
@@ -32,7 +33,7 @@ def load_interface():
         print('\n' * 100)
         print('Loaded Exobyte successfully!')
         print('100%')
-        time.sleep(2.5)
+        time.sleep(2.0)
         print('\n' * 100)
 
 
@@ -242,25 +243,25 @@ def datingsim_command_interface():
     f.close()
     print("Ty for the dox Kappa")
 
-    def guess_command_interface():
-        print("Welcome to guess the number")
-        print("===========================")
-        print(" ")
-        print("I'm thinking of a number, you have to guess what it is.")
-        print("The number is between 0-100 Good luck!")
-        print(" ")
+def guess_command_interface():
+    print("Welcome to guess the number")
+    print("===========================")
+    print(" ")
+    print("I'm thinking of a number, you have to guess what it is.")
+    print("The number is between 0-100 Good luck!")
+    print(" ")
 
-        num = random.randrange(100)
-        guess = ""
+    num = passgen.randrange(100)
+    guess = ""
 
-        while guess != num:
-            guess = int(input("Take a guess: "))
-            if guess < num:
-                print("Guess higher next time :)\n")
-            elif guess > num:
-                print("Guess lower next time :P\n")
-        print("CONGRATULATIONS!")
-        input()
+    while guess != num:
+        print("Type <exit> to exit the game!")
+        guess = int(input("Take a guess: "))
+        if guess < num:
+            print("Guess higher next time :)\n")
+        elif guess > num:
+            print("Guess lower next time :P\n")
+    print("CONGRATULATIONS!")
 
 
 load_interface()
