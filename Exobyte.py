@@ -6,16 +6,11 @@ import time
 from datetime import datetime
 from random import randint
 from tkinter import Tk
-
 from PIL import Image
+from termcolor import colored, cprint
 
 t = datetime.now()
 random = random.random()
-string.letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-KEY_LEN = 20
-letters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-numbers = "1234567890"
-passwordint = ""
 
 
 def load_interface():
@@ -54,7 +49,8 @@ def time_interface():
 
 def help_command_interface():
     if commands == "help":
-        print("Commands: ")
+        print_grey_on_white = lambda x: cprint(x, 'grey', 'on_white')
+        print_grey_on_white('Commands:')
         print("test {performs a test}")
         print("calc {A calculator}")
         print("clr {clears console}")
@@ -65,7 +61,8 @@ def help_command_interface():
         print("passgen {Generates random password")
         print("snow {Shitty falling snow}")
         print("datingsim {A dating simulator}")
-        print("- More commands soon -")
+        print_grey_on_white = lambda x: cprint(x, 'grey', 'on_white')
+        print_grey_on_white('- More commands soon -')
 
 
 def test_command_interface():
@@ -209,7 +206,8 @@ def datingsim_command_interface():
 load_interface()
 psw_interface()
 time_interface()
-commands = input(">>>: ")
+cmdcol = colored('>>>: ', attrs=['bold'])
+commands = input(cmdcol)
 while commands != "clr" + "test" + "calc":
     if commands == "test":
         test_command_interface()
@@ -234,6 +232,6 @@ while commands != "clr" + "test" + "calc":
     elif commands == "DatingSim" or commands == "datingsim":
         datingsim_command_interface()
     else:
-        print("Unknown command!")
-        print("type <help> for the available commands")
-    commands = input(">>>: ")
+        print("Unknown command type <help> for the available commands")
+    cmdcol = colored('>>>: ', attrs=['bold'])
+    commands = input(cmdcol)
