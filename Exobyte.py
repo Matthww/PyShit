@@ -257,7 +257,6 @@ def guess_command_interface():
     guess = ""
 
     while guess != num:
-        print("Type <exit> to exit the game!")
         guess = int(input("Take a guess: "))
         if guess < num:
             print("Guess higher next time :)\n")
