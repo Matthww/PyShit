@@ -1,6 +1,7 @@
 import random
 import sys
 import time
+import string
 from datetime import datetime
 from random import randint
 from tkinter import Frame, Label, Tk
@@ -8,6 +9,12 @@ from PIL import Image
 
 t = datetime.now()
 random = random.random()
+string.letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+KEY_LEN = 20
+letters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+numbers = "1234567890"
+passwordint = ""
+
 
 def load_interface():
     for x in range(100):
@@ -27,15 +34,17 @@ def psw_interface():
 
 def time_interface():
     t = datetime.now()
-    print('Year = %s' % t.year)
-    print('Month = %s' % t.month)
-    print('Day = %s' % t.day)
-    print('Hour = %s' % t.hour)
-    print('Minutes = %s' % t.minute)
-    print('Microsecond = %s' % t.microsecond)
+    #print('Year = %s' % t.year)
+    #print('Month = %s' % t.month)
+    #print('Day = %s' % t.day)
+    #print('Hour = %s' % t.hour)
+    #print('Minutes = %s' % t.minute)
+    #print('Microsecond = %s' % t.microsecond)
 
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
+    print("\n")
+    print("type <help> for available commands!")
 
 
 def help_command_interface():
@@ -47,7 +56,8 @@ def help_command_interface():
         print("RPS {Rock Paper Scissors game}")
         print("screen {opens a window")
         print("cat {opens a pic of the cutes kittycat you'll ever see}")
-        print("pwd {Generate random numbers")
+        print("numbergen {Generates random numbers")
+        print("pwdgen {Generates random password")
         print("- More commands soon -")
 
 
@@ -133,9 +143,17 @@ def cat_command_interface():
     image.show()
 
 
-def pwdgen_command_interface():
+def numbergen_command_interface():
     print("Generated password: ")
-    print(randint(100000, 1000000) + 123)
+    print(randint(100000, 1000000))
+
+
+def pwdgen_command_interface():
+    for i in range(8):
+        next_index = random.randrange(len(letters))
+        passwordint += letters[next_index]
+
+print(passwordint)
 
 
 load_interface()
@@ -157,6 +175,8 @@ while commands != "clr" + "test" + "calc":
         help_command_interface()
     elif commands == "cat":
         cat_command_interface()
-    elif commands == "pwd":
+    elif commands == "numbergen":
+        numbergen_command_interface()
+    elif commands == "pwdgen":
         pwdgen_command_interface()
     commands = input(">>>: ")
