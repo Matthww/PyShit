@@ -155,8 +155,8 @@ def snow_command_interface():
             computer = actions[randint(0, 19)]
             print(computer, end="")
             print(" ")
-        for i in range(999999):
-            time.sleep(0.4)
+            for i in range(999999):
+                time.sleep(0.4)
 
 
 def datingsim_command_interface():
