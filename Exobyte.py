@@ -134,6 +134,10 @@ def pwdgen_command_interface():
     print(pswgen())
 
 
+def snow_command_interface():
+    print("W.I.P")
+
+
 load_interface()
 psw_interface()
 time_interface()
@@ -157,4 +161,6 @@ while commands != "clr" + "test" + "calc":
         numbergen_command_interface()
     elif commands == "pwdgen":
         pwdgen_command_interface()
+    elif commands == "snow":
+        snow_command_interface()
     commands = input(">>>: ")
