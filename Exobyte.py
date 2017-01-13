@@ -43,7 +43,7 @@ def psw_interface():
         print(" - Access granted - ")
     else:
         print("Invalid Password!")
-
+        sys.exit("Access denied")
 
 def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
@@ -86,6 +86,7 @@ def calc_command_interface():
             print(num1 * num2)
         if oper == "%":
             print(num1 % num2)
+
 
 def rps_command_interface():
     actions = ["Rock", "Paper", "Scissors"]
@@ -148,18 +149,19 @@ def pwdgen_command_interface():
 
 
 def snow_command_interface():
-    actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
-    computer = actions[randint(0, 19)]
-    print(computer, end="")
-    computer = actions[randint(0, 19)]
-    print(computer, end="")
-    computer = actions[randint(0, 19)]
-    print(computer, end="")
-    computer = actions[randint(0, 19)]
-    print(computer, end="")
-    computer = actions[randint(0, 19)]
-    print(computer, end="")
-    print("")
+    if commands == "snow":
+            actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            print(" ")
     for i in range(999999):
         time.sleep(0.4)
 
@@ -167,7 +169,7 @@ def snow_command_interface():
 def datingsim_command_interface():
     name = input("What is your name? ")
     print("Hello " + name)
-    print("Nice to meet you and oohh nice shoes, wnanna bang lmao")
+    print("Nice to meet you and oohh nice shoes, wanna bang lmao")
     bang = input("You want to bang? (yes or no) ")
     if bang == "yes":
         print("Kyaaaaaaaaaaaaa")
@@ -190,13 +192,13 @@ def datingsim_command_interface():
         sys.exit(0)
     else:
         print("Erwin Rommel: Hmmmmm")
-        print(name + ": Hey, thats pretty good, but I got to go, ill ttyl *gives phonenumber*")
+        print(name + ": Hey, thats pretty good, but I got to go, ill ttyl *gives phone number*")
         phone = int(input("Enter phone number here "))
         print("Erwin Rommel: VERDAMPT JA")
         print(name + ": Bye")
 
     sjw = input("ARE YOU A SJW? ")
-    freunde = input("Habt du freuden? ")
+    freunde = input("Habt du freunden? ")
     # More storyline soon
     f = open('dox.txt', 'w')
     f.write('D0X:' + '\n')
