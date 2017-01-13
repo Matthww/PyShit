@@ -3,6 +3,7 @@ import random as passgen
 import string
 import sys
 import time
+import os
 from datetime import datetime
 from random import randint
 from tkinter import Tk
@@ -14,11 +15,19 @@ random = random.random()
 
 
 def load_interface():
-    for x in range(100):
-        print("[%s] loading...\n" % x, end="")
-        time.sleep(0.03)
-        if x == 99:
-            print("[100] loaded successfully ")
+    print('\n' * 100)
+    print("Loading Exobyte")
+    for i in range(101):
+            time.sleep(0.1)
+            sys.stdout.write("\r%d%%" % i)
+            sys.stdout.flush()
+
+    if i == 100:
+        print('\n' * 100)
+        print('Loaded Exobyte successfully!')
+        print('100%')
+        time.sleep(5)
+        print('\n' * 100)
 
 
 # rip strNophix 1337 password system
@@ -33,6 +42,7 @@ def psw_interface():
 
 
 def psw_interface():
+    print('Exobyte system©')
     password = str(input("Please enter password to continue: "))
     if password == "Hello" or password == "1337" or password == "leet":
         print(" - Access granted - ")
@@ -44,6 +54,7 @@ def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
     print(" ")
+    print("Welcome to Exobyte system!")
     print("type <help> for available commands!")
 
 
