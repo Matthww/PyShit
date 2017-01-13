@@ -3,23 +3,23 @@ import time
 
 commands = input(">>>: ")
 
-def rps_command_interface():
+def snow_command_interface():
     if commands == "snow":
-        actions = ["*", " ", " ", "*", " "]
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        print("\n")
+        actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
+        computer = actions[randint(0, 19)]
+        print(computer, end=" ")
+        computer = actions[randint(0, 19)]
+        print(computer, end=" ")
+        computer = actions[randint(0, 19)]
+        print(computer, end=" ")
+        computer = actions[randint(0, 19)]
+        print(computer, end=" ")
+        computer = actions[randint(0, 19)]
+        print(computer, end=" ")
+        print(" ")
 
-rps_command_interface()
+snow_command_interface()
 
 for i in range(999999):
-    time.sleep(0.3)
-    rps_command_interface()
+    time.sleep(0.4)
+    snow_command_interface()
