@@ -93,13 +93,13 @@ def rps_command_interface():
                     print("You lose!", computer, "cut", player)
                 else:
                     print("You win!", player, "covers", computer)
-            elif player == "Scissors":
+            elif player == "Scissors" or player == "Scissor":
                 if computer == "Rock":
                     print("You lose!", computer, "smashes", player)
                 else:
                     print("You win!", player, "cut", computer)
             else:
-                print("Rock, Paper or Scissors")
+                print("Rock, Paper or Scissor")
 
             player = False
             computer = actions[randint(0, 2)]
