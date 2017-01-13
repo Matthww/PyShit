@@ -62,7 +62,7 @@ def changepsw_interface():
     current_pass = input("Enter your current password: ")
     if current_pass == password.password:
         new_pass = input("Enter you new password: ")
-        f = open('password.py', 'w')
+        f = open('media/password.txt', 'w')
         f.write('password = ' + repr(new_pass) + '\n')
         f.close()
         return current_pass
