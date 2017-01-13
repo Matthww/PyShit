@@ -1,0 +1,5 @@
+D0X:
+name = 'Nick'
+phone = 9248204
+sjw = 'nO'
+freunden = 'No'

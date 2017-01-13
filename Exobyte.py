@@ -87,7 +87,6 @@ def calc_command_interface():
         if oper == "%":
             print(num1 % num2)
 
-
 def rps_command_interface():
     actions = ["Rock", "Paper", "Scissors"]
     computer = actions[randint(0, 2)]
@@ -148,21 +147,18 @@ def pwdgen_command_interface():
 
 
 def snow_command_interface():
-    global actions
-    if commands == "snow":
-        actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
+    actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
     computer = actions[randint(0, 19)]
-    print(computer, end=" ")
+    print(computer, end="")
     computer = actions[randint(0, 19)]
-    print(computer, end=" ")
+    print(computer, end="")
     computer = actions[randint(0, 19)]
-    print(computer, end=" ")
+    print(computer, end="")
     computer = actions[randint(0, 19)]
-    print(computer, end=" ")
+    print(computer, end="")
     computer = actions[randint(0, 19)]
-    print(computer, end=" ")
-    print(" ")
-
+    print(computer, end="")
+    print("")
     for i in range(999999):
         time.sleep(0.4)
 
