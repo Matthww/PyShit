@@ -87,17 +87,6 @@ def rps_command_interface():
         computer = actions[randint(0, 2)]
         player = True
         while player:
-            time.sleep(2.5)
-            print("\n" * 40)
-            print("Loading.")
-            time.sleep(0.6)
-            print("\n" * 40)
-            print("Loading..")
-            time.sleep(1.2)
-            print("\n" * 40)
-            print("Loading...")
-            time.sleep(0.5)
-            print("\n" * 40)
             player = input("Rock, Paper, Scissor\nChoice: ")
             if player == computer:
                 print("Draw!")
@@ -149,11 +138,12 @@ def numbergen_command_interface():
 
 
 def pwdgen_command_interface():
-    for i in range(8):
-        next_index = random.randrange(len(letters))
-        passwordint += letters[next_index]
+    def pswgen():
+        chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+        size = 16
+        return ''.join(randoms.choice(chars) for x in range(size, 24))
 
-print(passwordint)
+    print(pswgen())
 
 
 load_interface()
