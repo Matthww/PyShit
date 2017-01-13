@@ -242,6 +242,26 @@ def datingsim_command_interface():
     f.close()
     print("Ty for the dox Kappa")
 
+    def guess_command_interface():
+        print("Welcome to guess the number")
+        print("===========================")
+        print(" ")
+        print("I'm thinking of a number, you have to guess what it is.")
+        print("The number is between 0-100 Good luck!")
+        print(" ")
+
+        num = random.randrange(100)
+        guess = ""
+
+        while guess != num:
+            guess = int(input("Take a guess: "))
+            if guess < num:
+                print("Guess higher next time :)\n")
+            elif guess > num:
+                print("Guess lower next time :P\n")
+        print("CONGRATULATIONS!")
+        input()
+
 
 load_interface()
 psw_interface()
@@ -273,6 +293,8 @@ while commands != "clr" + "test" + "calc":
         snow_command_interface()
     elif commands == "DatingSim" or commands == "datingsim":
         datingsim_command_interface()
+    elif commands == "Guess" or commands == "guess":
+        guess_command_interface()
     else:
         print("Unknown command type <help> for the available commands")
     cmdcol = colored('>>>: ', attrs=['bold'])
