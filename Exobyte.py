@@ -45,7 +45,7 @@ def psw_interface():
         sys.exit("Access denied")
     print(" - Access granted - ")
 """
-
+current_password = password.password
 
 def psw_interface():
     print('Exobyte system©')
