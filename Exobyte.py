@@ -62,7 +62,7 @@ def help_command_interface():
         print("screen {opens a window")
         print("cat {opens a pic of the cutes kittycat you'll ever see}")
         print("numbergen {Generates random numbers")
-        print("pwdgen {Generates random password")
+        print("passgen {Generates random password")
         print("snow {Shitty falling snow}")
         print("datingsim {A dating simulator}")
         print("- More commands soon -")
@@ -139,12 +139,11 @@ def numbergen_command_interface():
 
 def pwdgen_command_interface():
     def pswgen():
-        psw_length = int(input("Psw length: "))
+        psw_length = int(input("Password length: "))
         chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
         size = psw_length
+        print("Generated password: ")
         return ''.join(passgen.choice(chars) for x in range(size))
-
-    print("Generated password: ")
     print(pswgen())
 
 
@@ -231,7 +230,7 @@ while commands != "clr" + "test" + "calc":
         cat_command_interface()
     elif commands == "numbergen":
         numbergen_command_interface()
-    elif commands == "pwdgen":
+    elif commands == "pwdgen" or commands == "passgen" or commands == "password":
         pwdgen_command_interface()
     elif commands == "snow":
         snow_command_interface()
