@@ -33,7 +33,7 @@ def load_interface():
         print('\n' * 100)
         print('Loaded Exobyte successfully!')
         print('100%')
-        time.sleep(5)
+        time.sleep(2.5)
         print('\n' * 100)
 
 
