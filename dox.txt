@@ -1,5 +1,13 @@
-D0X:
-name = 'Nick'
-phone = 9248204
-sjw = 'nO'
-freunden = 'No'
+Need to add
+Coloring
+
+
+def pwdgen_command_interface():
+    def pswgen():
+        psw_length = int(input("Psw length: "))
+        chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+        size = psw_length
+        return ''.join(passgen.choice(chars) for x in range(size))
+
+    print("Generated password: ")
+    print(pswgen())

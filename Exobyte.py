@@ -138,9 +138,10 @@ def numbergen_command_interface():
 
 def pwdgen_command_interface():
     def pswgen():
+        psw_length = int(input("Psw length: "))
         chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
-        size = 16
-        return ''.join(passgen.choice(chars) for x in range(size, 24))
+        size = psw_length
+        return ''.join(passgen.choice(chars) for x in range(size))
 
     print("Generated password: ")
     print(pswgen())
