@@ -10,7 +10,6 @@ from tkinter import Tk
 from PIL import Image
 from termcolor import colored, cprint
 import password
-import config
 
 t = datetime.now()
 random = random.random()
@@ -51,7 +50,7 @@ def psw_interface():
 def psw_interface():
     print('Exobyte system©')
     password = str(input("Please enter password to continue: "))
-    if password == "Hello" or password == "1337" or password == "leet":
+    if password == current_password:
         print(" - Access granted - ")
     else:
         print("Invalid Password!")
@@ -61,7 +60,12 @@ def psw_interface():
 def changepsw_interface():
     current_pass = input("Enter your current password: ")
     if current_pass == password.password:
-        new_pass = input()
+        new_pass = input("Enter you new password: ")
+        f = open('password.py', 'w')
+        f.write('password = ' + repr(new_pass) + '\n')
+        f.close()
+        return current_pass
+
 
 def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
