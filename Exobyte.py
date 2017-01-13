@@ -9,6 +9,8 @@ from random import randint
 from tkinter import Tk
 from PIL import Image
 from termcolor import colored, cprint
+import password
+import config
 
 t = datetime.now()
 random = random.random()
@@ -55,6 +57,12 @@ def psw_interface():
         print("Invalid Password!")
         sys.exit("Access denied")
 
+
+def changepsw_interface():
+    current_pass = input("Enter your current password: ")
+    if current_pass == password.password:
+        new_pass = input()
+
 def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
@@ -65,8 +73,8 @@ def time_interface():
 
 def help_command_interface():
     if commands == "help":
-        print_grey_on_white = lambda x: cprint(x, 'grey', 'on_white')
-        print_grey_on_white('Commands:')
+        cmd_cmd = lambda x: cprint(x, 'grey', 'on_white')
+        cmd_cmd('Commands:')
         cmd_test = colored('test', attrs=['underline'])
         print(cmd_test + " {performs a test}")
         cmd_calc = colored('calc', attrs=['underline'])
@@ -87,8 +95,8 @@ def help_command_interface():
         print(cmd_snow + " {Shitty falling snow}")
         cmd_datingsim = colored('datingsim', attrs=['underline'])
         print(cmd_datingsim + " {A dating simulator}")
-        print_grey_on_white = lambda x: cprint(x, 'grey', 'on_white')
-        print_grey_on_white('- More commands soon -')
+        cmd_soon = lambda x: cprint(x, 'grey', 'on_white')
+        cmd_soon('- More commands soon -')
 
 
 def test_command_interface():
@@ -245,6 +253,8 @@ while commands != "clr" + "test" + "calc":
         print("\n" * 100)
     elif commands == "screen":
         screen_command_interface()
+    elif commands == "chpass":
+        changepsw_interface()
     elif commands == "help":
         help_command_interface()
     elif commands == "cat":

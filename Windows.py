@@ -1,5 +1,8 @@
 from termcolor import colored, cprint
+import string
 
+chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+print(chars)
 text1 = colored(text="Commands: ", color='red')
 print(text1)
 
