@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 commands = input(">>>: ")
 
@@ -10,87 +11,15 @@ def rps_command_interface():
         computer = actions[randint(0, 3)]
         print(computer, end="")
         computer = actions[randint(0, 3)]
-        print(computer)
         print(computer, end="")
         computer = actions[randint(0, 3)]
         print(computer, end="")
         computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
         print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer, end="")
-        computer = actions[randint(0, 3)]
-        print(computer)
+        print("\n")
+
 rps_command_interface()
+
+for i in range(999999):
+    time.sleep(0.3)
+    rps_command_interface()
