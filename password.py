@@ -1,1 +1,1 @@
-password = 'Hello'
+password = 'Cpu'

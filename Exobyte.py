@@ -63,10 +63,9 @@ def changepsw_interface():
     current_pass = input("Enter your current password: ")
     if current_pass == password.password:
         new_pass = input("Enter you new password: ")
-        f = open('media/password.txt', 'w')
+        f = open('password.py', 'w')
         f.write('password = ' + repr(new_pass) + '\n')
         f.close()
-        return current_pass
 
 
 def time_interface():
@@ -213,9 +212,17 @@ def snow_command_interface():
             print(computer, end="")
             computer = actions[randint(0, 19)]
             print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
+            computer = actions[randint(0, 19)]
+            print(computer, end="")
             print(" ")
-            for i in range(999999):
-                time.sleep(0.4)
 
 
 def datingsim_command_interface():
@@ -276,7 +283,7 @@ def guess_command_interface():
         guess = int(input("Take a guess: "))
         if guess < num:
             print("Guess higher next time :)\n")
-        elif guess > num:
+        elif guess > nupam:
             print("Guess lower next time :P\n")
     print("CONGRATULATIONS!")
 
@@ -308,7 +315,9 @@ while commands != "clr" + "test" + "calc":
     elif commands == "pwdgen" or commands == "passgen" or commands == "password":
         pwdgen_command_interface()
     elif commands == "snow":
-        snow_command_interface()
+        for i in range(10):
+            time.sleep(0.4)
+            snow_command_interface()
     elif commands == "DatingSim" or commands == "datingsim":
         datingsim_command_interface()
     elif commands == "Guess" or commands == "guess":

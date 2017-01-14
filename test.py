@@ -20,6 +20,8 @@ def snow_command_interface():
 
 snow_command_interface()
 
-for i in range(999999):
+for i in range(10):
     time.sleep(0.4)
     snow_command_interface()
+
+commands = input(">>>: ")
