@@ -1,10 +1,15 @@
-import time
-from datetime import datetime
+import asyncio
+import datetime
 
-t = datetime.now()
-i = False
+@asyncio.coroutine
+def display_date(loop):
+    end_time = loop.time() + 5.0
+    while True:
+        print(datetime.datetime.now())
+        if (loop.time() + 1.0) >= end_time:
+            break
+        yield from asyncio.sleep(1)
 
-while not i:
-    print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
-    time.sleep(1)
-    i = False
+loop = asyncio.get_event_loop()
+loop.run_until_complete(display_date(loop))
+loop.close()

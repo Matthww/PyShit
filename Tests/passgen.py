@@ -1,11 +1,16 @@
-import random
+import string
+import random as passgen
 
-letters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-numbers = "1234567890"
-password = ""
+from datetime import datetime
+startTime = datetime.now()
 
-for i in range(8):
-    next_index = random.randrange(len(letters))
-    password += letters[next_index]
+def pswgen():
+    #psw_length = int(input("Password length: "))
+    chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+    size = 999999
+    print("Generated password: ")
+    return ''.join(passgen.choice(chars) for x in range(size))
 
-print(password)
+
+print(pswgen())
+print(datetime.now() - startTime)

@@ -143,23 +143,23 @@ def rps_command_interface():
         player = input("Rock, Paper, Scissor\nChoice: ")
         if player == computer:
             print("Draw!")
-        elif player == "Rock":
+        elif player == "Rock" or player == "rock":
             if computer == "Paper":
                 print("You lose!", computer, "covers", player)
             else:
                 print("You win!", player, "smashes", computer)
-        elif player == "Paper":
+        elif player == "Paper" or player == "paper":
             if computer == "Scissors":
                 print("You lose!", computer, "cut", player)
             else:
                 print("You win!", player, "covers", computer)
-        elif player == "Scissors" or player == "Scissor":
+        elif player == "Scissors" or player == "Scissor" or player == "scissors" or player == "scissor":
             if computer == "Rock":
                 print("You lose!", computer, "smashes", player)
             else:
                 print("You win!", player, "cut", computer)
         else:
-            print("Rock, Paper or Scissor")
+            print("Rock, Paper or Scissors")
 
         player = False
         computer = actions[randint(0, 2)]
