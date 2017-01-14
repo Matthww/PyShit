@@ -3,12 +3,13 @@ import random as passgen
 import string
 import sys
 import time
-import os
 from datetime import datetime
 from random import randint
 from tkinter import Tk
+import pyowm
 from PIL import Image
 from termcolor import colored, cprint
+
 import password
 
 t = datetime.now()
@@ -104,6 +105,8 @@ def help_command_interface():
         print(cmd_snow + " {Shitty falling snow}")
         cmd_datingsim = colored('datingsim', attrs=['underline'])
         print(cmd_datingsim + " {A dating simulator}")
+        cmd_weather = colored('weather', attrs=['underline'])
+        print(cmd_weather + " {Check the weather}")
         cmd_soon = lambda x: cprint(x, 'grey', 'on_white')
         cmd_soon('- More commands soon -')
 
@@ -154,6 +157,19 @@ def rps_command_interface():
 
         player = False
         computer = actions[randint(0, 2)]
+
+def weather_command_interface():
+    weather_command = input("Your place: (example: Londen,uk)")
+    owm = pyowm.OWM('797153f746aae22307499da4ad723468')
+
+    observation = owm.weather_at_place(weather_command)
+    w = observation.get_weather()
+    print(w)
+
+    wind = w.get_wind()
+    temp = w.get_temperature('celsius')
+    print(wind)
+    print(temp)
 
 
 def screen_command_interface():  # strNophix made it :P
@@ -297,6 +313,8 @@ while commands != "clr" + "test" + "calc":
         datingsim_command_interface()
     elif commands == "Guess" or commands == "guess":
         guess_command_interface()
+    elif commands == "weather" or commands == "Weather":
+        weather_command_interface()
     else:
         print("Unknown command type <help> for the available commands")
     cmdcol = colored('>>>: ', attrs=['bold'])
