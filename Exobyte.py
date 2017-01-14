@@ -293,7 +293,7 @@ def guess_command_interface():
         guess = int(input("Take a guess: "))
         if guess < num:
             print("Guess higher next time :)\n")
-        elif guess > nupam:
+        elif guess > num:
             print("Guess lower next time :P\n")
     print("CONGRATULATIONS!")
 
