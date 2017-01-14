@@ -13,7 +13,6 @@ from termcolor import colored, cprint
 
 from media.password import password
 
-
 # All defined stuff
 t = datetime.now()
 random = random.random()
@@ -31,17 +30,17 @@ current_password = password
 def load_interface():
     print('\n' * 100)
     print("Loading Exobyte")
-    for i in range(101):
+    for x in range(101):
         time.sleep(0.09)
-        sys.stdout.write("\r%d%%" % i)
+        sys.stdout.write("\r%d%%" % x)
         sys.stdout.flush()
 
-    if i == 100:
-        print('\n' * 100)
-        print('Loaded Exobyte successfully!')
-        print('100%')
-        time.sleep(2.0)
-        print('\n' * 100)
+        if x == 100:
+            print('\n' * 100)
+            print('Loaded Exobyte successfully!')
+            print('100%')
+            time.sleep(2.0)
+            print('\n' * 100)
 
 
 # rip strNophix 1337 password system
@@ -85,36 +84,36 @@ def time_interface():
 
 
 def help_command_interface():
-        cmd_cmd = lambda x: cprint(x, 'grey', 'on_white')
-        cmd_cmd('Commands:')
-        cmd_test = colored('test', attrs=['underline'])
-        print(cmd_test + " {performs a test}")
-        cmd_calc = colored('calc', attrs=['underline'])
-        print(cmd_calc + " {A calculator}")
-        cmd_clr = colored('clr', attrs=['underline'])
-        print(cmd_clr + " {clears console}")
-        cmd_rps = colored('rps', attrs=['underline'])
-        print(cmd_rps + " {Rock Paper Scissors game}")
-        cmd_screen = colored('screen', attrs=['underline'])
-        print(cmd_screen + " {opens a window}")
-        cmd_cat = colored('cat', attrs=['underline'])
-        print(cmd_cat + " {opens a pic of the cutes kittycat you'll ever see}")
-        cmd_numgen = colored('numgen', attrs=['underline'])
-        print(cmd_numgen + " {Generates random numbers}")
-        cmd_passgen = colored('passgen', attrs=['underline'])
-        print(cmd_passgen + " {Generates a random password}")
-        cmd_chpass = colored('chpass', attrs=['underline'])
-        print(cmd_chpass + " {Change your login password}")
-        cmd_guess = colored('guess', attrs=['underline'])
-        print(cmd_guess + " {Guess the number}")
-        cmd_snow = colored('snow', attrs=['underline'])
-        print(cmd_snow + " {Shitty falling snow}")
-        cmd_datingsim = colored('datingsim', attrs=['underline'])
-        print(cmd_datingsim + " {A dating simulator}")
-        cmd_weather = colored('weather', attrs=['underline'])
-        print(cmd_weather + " {Check the weather}")
-        cmd_soon = lambda x: cprint(x, 'grey', 'on_white')
-        cmd_soon('- More commands soon -')
+    cmd_cmd = lambda x: cprint(x, 'grey', 'on_white')
+    cmd_cmd('Commands:')
+    cmd_test = colored('test', attrs=['underline'])
+    print(cmd_test + " {performs a test}")
+    cmd_calc = colored('calc', attrs=['underline'])
+    print(cmd_calc + " {A calculator}")
+    cmd_clr = colored('clr', attrs=['underline'])
+    print(cmd_clr + " {clears console}")
+    cmd_rps = colored('rps', attrs=['underline'])
+    print(cmd_rps + " {Rock Paper Scissors game}")
+    cmd_screen = colored('screen', attrs=['underline'])
+    print(cmd_screen + " {opens a window}")
+    cmd_cat = colored('cat', attrs=['underline'])
+    print(cmd_cat + " {opens a pic of the cutes kitty cat you'll ever see}")
+    cmd_numgen = colored('numgen', attrs=['underline'])
+    print(cmd_numgen + " {Generates random numbers}")
+    cmd_passgen = colored('passgen', attrs=['underline'])
+    print(cmd_passgen + " {Generates a random password}")
+    cmd_chpass = colored('chpass', attrs=['underline'])
+    print(cmd_chpass + " {Change your login password}")
+    cmd_guess = colored('guess', attrs=['underline'])
+    print(cmd_guess + " {Guess the number}")
+    cmd_snow = colored('snow', attrs=['underline'])
+    print(cmd_snow + " {Shitty falling snow}")
+    cmd_datingsim = colored('datingsim', attrs=['underline'])
+    print(cmd_datingsim + " {A dating simulator}")
+    cmd_weather = colored('weather', attrs=['underline'])
+    print(cmd_weather + " {Check the weather}")
+    cmd_soon = lambda x: cprint(x, 'grey', 'on_white')
+    cmd_soon('- More commands soon -')
 
 
 def test_command_interface():
@@ -166,7 +165,7 @@ def rps_command_interface():
 
 
 def weather_command_interface():
-    weather_command = input("Your place: (example: Londen,uk) ")
+    weather_command = input("Your place: (example: London,uk) ")
     owm = pyowm.OWM('797153f746aae22307499da4ad723468')
 
     observation = owm.weather_at_place(weather_command)
@@ -320,7 +319,7 @@ def datingsim_command_interface():
         sys.exit(0)
     else:
         print("Erwin Rommel: Hmmmmm")
-        print(name + ": Hey, thats pretty good, but I got to go, ill ttyl *gives phone number*")
+        print(name + ": Hey, that's pretty good, but I got to go, ill ttyl *gives phone number*")
         phone = int(input("Enter phone number here "))
         print("Erwin Rommel: VERDAMPT JA")
         print(name + ": Bye")
