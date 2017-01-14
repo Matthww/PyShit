@@ -109,5 +109,5 @@ Desktop.ini
 # Sphinx-doc
 /docs/build/
 !/docs/requirements.txt
-media\password.py
 media/password.py
+Tests/Cracker.py

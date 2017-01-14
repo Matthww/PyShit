@@ -55,12 +55,21 @@ def psw_interface():
 
 
 def psw_interface():
-    print('Exobyte system©')
+    text = colored('Exobyte system©', 'red', attrs=['bold'])
+    print(text)
+    #print('Exobyte system©')
+    print(' ')
+    print('default password: Hello')
+    print('change your password with: chpass')
     password = str(input("Please enter password to continue: "))
     if password == current_password:
-        print(" - Access granted - ")
+        print("\n" * 100)
+        text = colored('- Access Granted -', 'green', attrs=['bold'])
+        print(text)
     else:
-        print("Invalid Password!")
+        print("\n" * 100)
+        text = colored('Invalid password!', 'red', attrs=['bold'])
+        print(text)
         sys.exit("Access denied")
 
 
@@ -72,15 +81,20 @@ def changepsw_interface():
         f.write('password = ' + repr(new_pass) + '\n')
         f.close()
     else:
-        print("Invalid password!")
+        text = colored('Invalid password!', 'red', attrs=['bold'])
+        print(text)
 
 
 def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
     print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
     print(" ")
-    print("Welcome to Exobyte system!")
-    print("type <help> for available commands!")
+    text = colored('Welcome to Exobyte system!', 'green')
+    print(text)
+    #print("Welcome to Exobyte system!")
+    #print("type <help> for available commands!")
+    text = colored('<help>', attrs=['bold'])
+    print("type", text, "for available commands!")
 
 
 def help_command_interface():
@@ -139,26 +153,41 @@ def rps_command_interface():
     computer = actions[randint(0, 2)]
     player = True
     while player:
-        player = input("Rock, Paper, Scissor\nChoice: ")
+        player = input("Rock, Paper, Scissors\nChoice: ")
         if player == computer:
-            print("Draw!")
+            text = colored('Draw', 'yellow', attrs=['bold'])
+            print(text)
         elif player == "Rock" or player == "rock":
             if computer == "Paper":
-                print("You lose!", computer, "covers", player)
+                text = colored("You lose! Paper covers Rock", 'red', attrs=['bold'])
+                print(text)
+                #print("You lose!", computer, "covers", player)
             else:
-                print("You win!", player, "smashes", computer)
+                text = colored("You win! Rock smashes Scissors", 'green', attrs=['bold'])
+                print(text)
+                #print("You win!", player, "smashes", computer)
         elif player == "Paper" or player == "paper":
             if computer == "Scissors":
-                print("You lose!", computer, "cut", player)
+                text = colored("You lose! Scissors cut Paper", 'red', attrs=['bold'])
+                print(text)
+                #print("You lose!", computer, "cut", player)
             else:
-                print("You win!", player, "covers", computer)
+                text = colored("You win! Paper covers Rock", 'green', attrs=['bold'])
+                print(text)
+                #print("You win!", player, "covers", computer)
         elif player == "Scissors" or player == "Scissor" or player == "scissors" or player == "scissor":
             if computer == "Rock":
-                print("You lose!", computer, "smashes", player)
+                text = colored("You lose! Rock smashes Scissors", 'red', attrs=['bold'])
+                print(text)
+                #print("You lose!", computer, "smashes", player)
             else:
+                text = colored("You win! Scissors cut Paper", 'green', attrs=['bold'])
+                print(text)
                 print("You win!", player, "cut", computer)
         else:
-            print("Rock, Paper or Scissors")
+            text = colored("Rock, Paper or Scissors", 'red', attrs=['bold'])
+            print(text)
+            #print("Rock, Paper or Scissors")
 
         player = False
         computer = actions[randint(0, 2)]
@@ -193,7 +222,7 @@ def cat_command_interface():
 
 
 def numbergen_command_interface():
-    print("Generated password: ")
+    print("Generated number password: ")
     print(randint(100000, 1000000))
 
 
@@ -202,10 +231,13 @@ def pwdgen_command_interface():
         psw_length = int(input("Password length: "))
         chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
         size = psw_length
-        print("Generated password: ")
+        text = colored("Generated password: ", 'blue', attrs=['bold'])
+        print(text)
+        #print("Generated password: ")
         return ''.join(passgen.choice(chars) for x in range(size))
 
-    print(pswgen())
+    text = colored("", 'red')
+    print(text, pswgen())
 
 
 def snow_command_interface():
@@ -363,27 +395,35 @@ def guess_command_interface():
 
 def logout_command_interface():
     print("\n" * 100)
-    print("Logging out.")
+    text = colored("Logging out...", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Logging out..")
+    text = colored("Logging out..", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Logging out...")
+    text = colored("Logging out.", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Logging out..")
+    text = colored("Logging out..", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Logging out.")
+    text = colored("Logging out...", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Logging out..")
+    text = colored("Logging out..", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Logging out...")
+    text = colored("Logging out.", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
-    print("Logged out!")
+    text = colored("Logged out!", 'red', attrs=['bold'])
+    print(text)
     time.sleep(1.5)
     print("\n" * 100)
     psw_interface()
@@ -391,27 +431,35 @@ def logout_command_interface():
 
 def exit_command_interface():
     print("\n" * 100)
-    print("Shutting down.")
+    text = colored("Shutting down.", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Shutting down..")
+    text = colored("Shutting down..", 'red')
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Shutting down...")
+    text = colored("Shutting down...", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Shutting down..")
+    text = colored("Shutting down..", 'red')
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Shutting down.")
+    text = colored("Shutting down.", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Shutting down..")
+    text = colored("Shutting down..", 'red')
+    print(text)
     time.sleep(0.5)
     print("\n" * 100)
-    print("Shutting down...")
+    text = colored("Shutting down...", 'red', attrs=['bold'])
+    print(text)
     time.sleep(0.5)
-    print("Successfully shut down!")
+    text = colored("Successfully shutdown!", 'red', attrs=['bold'])
+    print(text)
     time.sleep(2)
     exit("Bye!")
 
@@ -458,7 +506,11 @@ while commands != "clr" + "test" + "calc":
     elif commands == "exit":
         exit_command_interface()
     else:
-        print("Unknown command type <help> for the available commands")
+        text = colored("Unknown command type", 'red')
+        text1 = colored("<help>", 'red', attrs=['bold'])
+        text2 = colored("for the available commands", 'red')
+        print(text, text1, text2)
+        #print("Unknown command type <help> for the available commands")
     cmdcol = colored('>>>: ', attrs=['bold'])
     commands = input(cmdcol)
 
