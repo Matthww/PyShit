@@ -1,6 +1,0 @@
-Need to add
-Options command - Features later
-Password login change
-Password login store file
-More screen cmd
-GUI for exobyte
