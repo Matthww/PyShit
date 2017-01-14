@@ -325,7 +325,8 @@ while commands != "clr" + "test" + "calc":
     elif commands == "pwdgen" or commands == "passgen" or commands == "password":
         pwdgen_command_interface()
     elif commands == "snow":
-        for i in range(10):
+        snow_cycle = int(input("Snow cycle: "))
+        for i in range(snow_cycle):
             time.sleep(0.4)
             snow_command_interface()
     elif commands == "DatingSim" or commands == "datingsim":
