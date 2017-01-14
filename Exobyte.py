@@ -462,3 +462,6 @@ while commands != "clr" + "test" + "calc":
         print("Unknown command type <help> for the available commands")
     cmdcol = colored('>>>: ', attrs=['bold'])
     commands = input(cmdcol)
+
+#We have been working on this for 4 days now and learned so many things, its our first project, hope we can keep going and become
+#good devs, I know theres way more and difficulter stuff but we will learn it.
