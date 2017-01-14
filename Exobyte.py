@@ -231,6 +231,32 @@ def snow_command_interface():
     print(computer, end="")
     computer = actions[randint(0, 19)]
     print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
     print(" ")
 
 
