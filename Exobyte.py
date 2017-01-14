@@ -293,9 +293,13 @@ def guess_command_interface():
         guess = int(input("Take a guess: "))
         if guess < num:
             print("Guess higher next time :)\n")
+            break
         elif guess > num:
             print("Guess lower next time :P\n")
-    print("CONGRATULATIONS!")
+            break
+        elif guess == num:
+            print("CONGRATULATIONS!")
+            break
 
 
 load_interface()
@@ -335,6 +339,8 @@ while commands != "clr" + "test" + "calc":
         guess_command_interface()
     elif commands == "weather" or commands == "Weather":
         weather_command_interface()
+    elif commands == "logout":
+        logout_commands_interface()
     else:
         print("Unknown command type <help> for the available commands")
     cmdcol = colored('>>>: ', attrs=['bold'])
