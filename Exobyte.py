@@ -268,7 +268,7 @@ def datingsim_command_interface():
     sjw = input("ARE YOU A SJW? ")
     freunde = input("Habt du freunden? ")
     # More storyline soon
-    f = open('dox.txt', 'w')
+    f = open('media/dox.txt', 'w')
     f.write('D0X:' + '\n')
     f.write('name = ' + repr(name) + '\n')
     f.write('phone = ' + repr(phone) + '\n')
@@ -300,6 +300,61 @@ def guess_command_interface():
         elif guess == num:
             print("CONGRATULATIONS!")
             break
+
+
+def logout_command_interface():
+    print("\n" * 100)
+    print("Logging out.")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Logging out..")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Logging out...")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Logging out..")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Logging out.")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Logging out..")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Logging out...")
+    time.sleep(0.5)
+    print("Logged out!")
+    time.sleep(1.5)
+    print("\n" * 100)
+    psw_interface()
+
+
+def exit_command_interface():
+    print("\n" * 100)
+    print("Shutting down.")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Shutting down..")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Shutting down...")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Shutting down..")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Shutting down.")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Shutting down..")
+    time.sleep(0.5)
+    print("\n" * 100)
+    print("Shutting down...")
+    time.sleep(0.5)
+    print("Successfully shut down!")
+    time.sleep(2)
+    exit("Bye!")
 
 
 load_interface()
@@ -340,7 +395,9 @@ while commands != "clr" + "test" + "calc":
     elif commands == "weather" or commands == "Weather":
         weather_command_interface()
     elif commands == "logout":
-        logout_commands_interface()
+        logout_command_interface()
+    elif commands == "exit":
+        exit_command_interface()
     else:
         print("Unknown command type <help> for the available commands")
     cmdcol = colored('>>>: ', attrs=['bold'])
