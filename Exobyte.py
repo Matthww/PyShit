@@ -7,13 +7,17 @@ from datetime import datetime
 from random import randint
 from tkinter import Tk
 import pyowm
+# PIL is replace by Pillow in requirements.txt
 from PIL import Image
 from termcolor import colored, cprint
 
-import password
+from media.password import password
 
+
+# All defined stuff
 t = datetime.now()
 random = random.random()
+current_password = password
 
 """ Old Loading stuff from @strNophix
     for x in range(100):
@@ -22,13 +26,15 @@ random = random.random()
         if x == 99:
             print("[100] loaded successfully ")
 """
+
+
 def load_interface():
     print('\n' * 100)
     print("Loading Exobyte")
     for i in range(101):
-            time.sleep(0.09)
-            sys.stdout.write("\r%d%%" % i)
-            sys.stdout.flush()
+        time.sleep(0.09)
+        sys.stdout.write("\r%d%%" % i)
+        sys.stdout.flush()
 
     if i == 100:
         print('\n' * 100)
@@ -47,7 +53,7 @@ def psw_interface():
         sys.exit("Access denied")
     print(" - Access granted - ")
 """
-current_password = password.password
+
 
 def psw_interface():
     print('Exobyte system©')
@@ -61,11 +67,13 @@ def psw_interface():
 
 def changepsw_interface():
     current_pass = input("Enter your current password: ")
-    if current_pass == password.password:
+    if current_pass == password:
         new_pass = input("Enter you new password: ")
-        f = open('password.py', 'w')
+        f = open('media/password.py', 'w')
         f.write('password = ' + repr(new_pass) + '\n')
         f.close()
+    else:
+        print("Invalid password!")
 
 
 def time_interface():
@@ -77,7 +85,6 @@ def time_interface():
 
 
 def help_command_interface():
-    if commands == "help":
         cmd_cmd = lambda x: cprint(x, 'grey', 'on_white')
         cmd_cmd('Commands:')
         cmd_test = colored('test', attrs=['underline'])
@@ -111,21 +118,21 @@ def help_command_interface():
 
 
 def test_command_interface():
-        print("Hello this is a test.")
+    print("Hello this is a test.")
 
 
 def calc_command_interface():
-        num1 = int(input(">>>: Number 1: "))
-        num2 = int(input(">>>: Number 2: "))
-        oper = input("Choose your operator: % + - * - ")
-        if oper == "+":
-            print(num1 + num2)
-        if oper == "-":
-            print(num1 - num2)
-        if oper == "*":
-            print(num1 * num2)
-        if oper == "%":
-            print(num1 % num2)
+    num1 = int(input(">>>: Number 1: "))
+    num2 = int(input(">>>: Number 2: "))
+    oper = input("Choose your operator: % + - * - ")
+    if oper == "+":
+        print(num1 + num2)
+    if oper == "-":
+        print(num1 - num2)
+    if oper == "*":
+        print(num1 * num2)
+    if oper == "%":
+        print(num1 % num2)
 
 
 def rps_command_interface():
@@ -156,6 +163,7 @@ def rps_command_interface():
 
         player = False
         computer = actions[randint(0, 2)]
+
 
 def weather_command_interface():
     weather_command = input("Your place: (example: Londen,uk) ")
@@ -197,32 +205,33 @@ def pwdgen_command_interface():
         size = psw_length
         print("Generated password: ")
         return ''.join(passgen.choice(chars) for x in range(size))
+
     print(pswgen())
 
 
 def snow_command_interface():
-            actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            computer = actions[randint(0, 19)]
-            print(computer, end="")
-            print(" ")
+    actions = ["*", " ", " ", "*", " ", " ", "*", " ", "*", " ", "*", " ", " ", " ", "*", " ", " ", "*", " ", " "]
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    computer = actions[randint(0, 19)]
+    print(computer, end="")
+    print(" ")
 
 
 def datingsim_command_interface():
@@ -267,6 +276,7 @@ def datingsim_command_interface():
     f.write('freunden = ' + repr(freunde) + "\n")
     f.close()
     print("Ty for the dox Kappa")
+
 
 def guess_command_interface():
     print("Welcome to guess the number")
