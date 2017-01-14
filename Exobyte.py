@@ -158,7 +158,7 @@ def rps_command_interface():
         computer = actions[randint(0, 2)]
 
 def weather_command_interface():
-    weather_command = input("Your place: (example: Londen,uk)")
+    weather_command = input("Your place: (example: Londen,uk) ")
     owm = pyowm.OWM('797153f746aae22307499da4ad723468')
 
     observation = owm.weather_at_place(weather_command)
