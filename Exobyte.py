@@ -71,6 +71,7 @@ def psw_interface():
         print("\n" * 100)
         text = colored('- Access Granted -', 'green', attrs=['bold'])
         print(text)
+        time_interface()
     else:
         print("\n" * 100)
         text = colored('Invalid password!', 'red', attrs=['bold'])
@@ -92,7 +93,7 @@ def changepsw_interface():
 
 def time_interface():
     print("Time = %s:%s:%s" % (t.hour, t.minute, t.second))
-    print("Date =  %s/%s/%s" % (t.day, t.month, t.year))
+    print("Date = %s/%s/%s" % (t.day, t.month, t.year))
     print(" ")
     text = colored('Welcome to Exobyte system!', 'green')
     print(text)
@@ -508,7 +509,7 @@ while commands != "clr" + "test" + "calc":
         weather_command_interface()
     elif commands == "logout":
         logout_command_interface()
-    elif commands == "exit":
+    elif commands == "exit" or commands == "shutdown":
         exit_command_interface()
     else:
         text = colored("Unknown command type", 'red')
