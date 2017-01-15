@@ -71,7 +71,6 @@ def psw_interface():
         print("\n" * 100)
         text = colored('- Access Granted -', 'green', attrs=['bold'])
         print(text)
-        time_interface()
     else:
         print("\n" * 100)
         text = colored('Invalid password!', 'red', attrs=['bold'])
@@ -200,7 +199,7 @@ def rps_command_interface():
 
 
 def weather_command_interface():
-    weather_command = input("Your place: (example: London,uk) ")
+    weather_command = input("Your place: (example: London,UK) ")
     owm = pyowm.OWM('797153f746aae22307499da4ad723468')
 
     observation = owm.weather_at_place(weather_command)
@@ -433,6 +432,7 @@ def logout_command_interface():
     time.sleep(1.5)
     print("\n" * 100)
     psw_interface()
+    time_interface()
 
 
 def exit_command_interface():
