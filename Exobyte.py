@@ -75,7 +75,11 @@ def psw_interface():
         print("\n" * 100)
         text = colored('Invalid password!', 'red', attrs=['bold'])
         print(text)
-        sys.exit("Access denied")
+        time.sleep(2)
+        print("\n" * 100)
+        text = colored('Access Denied!', 'red', attrs=['bold'])
+        print(text)
+        sys.exit()
 
 
 def changepsw_interface():
@@ -227,8 +231,19 @@ def cat_command_interface():
 
 
 def numbergen_command_interface():
-    print("Generated number password: ")
-    print(randint(100000, 1000000))
+    # print("Generated number password: ")
+    # print(randint(100000, 1000000))
+    def numgen():
+        num_length = int(input("Password length: "))
+        chars = string.digits
+        size = num_length
+        text = colored("Generated password: ", 'blue', attrs=['bold'])
+        print(text)
+        # print("Generated password: ")
+        return ''.join(passgen.choice(chars) for x in range(size))
+
+    text = colored("", 'red')
+    print(text, numgen())
 
 
 def pwdgen_command_interface():
